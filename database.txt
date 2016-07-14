@@ -1,0 +1,45 @@
+CREATE TABLE  `vaccines`.`perfil` (
+`curp` VARCHAR( 20 ) NOT NULL ,
+`certificado` VARCHAR( 20 ) NOT NULL ,
+`nombre` VARCHAR( 20 ) NOT NULL ,
+`grupo` VARCHAR( 20 ) NOT NULL ,
+`afiliacion` VARCHAR( 20 ) NOT NULL ,
+`unidad` VARCHAR( 20 ) NOT NULL ,
+`foto` VARCHAR( 20 ) NOT NULL ,
+PRIMARY KEY (  `curp` )
+) ;
+
+
+CREATE TABLE  `vaccines`.`datosgenerales` (
+`callenum` VARCHAR( 30 ) NOT NULL ,
+`colonia` VARCHAR( 30 ) NOT NULL ,
+`localidad` VARCHAR( 30 ) NOT NULL ,
+`municipio` VARCHAR( 30 ) NOT NULL ,
+`cp` INT( 30 ) NOT NULL ,
+`entidad` VARCHAR( 30 ) NOT NULL ,
+`localidadLug` VARCHAR( 30 ) NOT NULL ,
+`municipoEntLug` VARCHAR( 30 ) NOT NULL ,
+`fechanaci` DATE NOT NULL ,
+`localidadReg` VARCHAR( 30 ) NOT NULL ,
+`municipioEntLug` VARCHAR( 30 ) NOT NULL ,
+`fecharegis` DATE NOT NULL ,
+`curp` VARCHAR( 30 ) NOT NULL, 
+foreign key(curp) references perfil(curp);
+
+CREATE TABLE  `vaccines`.`regvacunas` (
+`vacuna` VARCHAR( 20 ) NOT NULL ,
+`enfermedad` VARCHAR( 20 ) NOT NULL ,
+`dosis` VARCHAR( 20 ) NOT NULL ,
+`edad` INT NOT NULL ,
+`fecha` DATE NOT NULL ,
+`curp` VARCHAR( 20 ) NOT NULL ,
+PRIMARY KEY (  `curp` )
+foreign key(curp) references perfil(curp));
+
+CREATE TABLE  `vaccines`.`citas` (
+`afiliacion` VARCHAR( 20 ) NOT NULL ,
+`fecha` DATE NOT NULL ,
+`consultorio` VARCHAR( 20 ) NOT NULL ,
+`curp` VARCHAR( 20 ) NOT NULL ,
+PRIMARY KEY (  `afiliacion` )
+foreign key(curp) references perfil(curp)) ;
