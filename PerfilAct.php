@@ -7,11 +7,13 @@
 	$usu=$_SESSION['k_username'];
 
 	$link=mysqli_connect("localhost","root","");
-	mysqli_select_db($link,"vaccinesApp"); 
-	$result01=mysqli_query($link,"select * from perfil where nombre='$usu' ");
+	mysqli_select_db($link,"vaccinesapp"); 
+	$result01=mysqli_query($link,"select * from paciente where nombre='$usu' ");
 		while($row=mysqli_fetch_array($result01))
 			{
- 				$CURP=$row["curp"];		  
+
+ 				$CURP=$row["curp"];	
+ 				  
 			}
 
 	?>
@@ -60,11 +62,12 @@
 			echo"<div class='container'>";
 					echo"<header>";
 						echo"<h3>PERFIL</h3>";
-						$result1=mysqli_query($link,"select * from perfil where nombre='$usu' ");
+						$result1=mysqli_query($link,"select * from paciente where nombre='$usu' ");
 						while($row=mysqli_fetch_array($result1))
 							{
  							  $nom=$row["nombre"];
   								 $fot=$row["foto"];
+
      						echo"<img class='img-responsive' style='width:150px; height:150px; border-radius:50%;' src='Imagenes/$fot'>";
 	 						echo"<h4>$nom</h4>";
 						}
@@ -79,7 +82,7 @@
 					<?php
 echo "<div class='container'>";
    
-$result=mysqli_query($link,"select * from perfil where nombre='$usu' ");
+$result=mysqli_query($link,"select * from paciente where nombre='$usu' ");
 while($row=mysqli_fetch_array($result))
 {
    $nom=$row["nombre"];

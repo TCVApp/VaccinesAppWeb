@@ -8,6 +8,9 @@ $result=(mysqli_query($link,"select * from paciente where afiliacion='$usu'"));
 if($row=mysqli_fetch_array($result)){
 	$pas=$row['password'];
 	$nombre=$row['nombre'];
+	echo $pas;
+	echo $nombre;
+	
 	if($pas==$pass){
 		session_start();
 		$_SESSION['k_username']=$nombre;
