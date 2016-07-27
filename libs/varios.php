@@ -3,8 +3,8 @@
 	Conectar con la base de datos
 */
 
-$urlIndex = "http://localhost/FeproAdd/LoginAct.php";
-$urlRegistro = "http://localhost/FeproAdd/RegistroAct.php";
+$urlIndex = "http://localhost/VaccinesAppWeb/LoginAct.php";
+$urlRegistro = "http://localhost/VaccinesAppWeb/RegistroAct.php";
 
 function conectarse() 
 { 
